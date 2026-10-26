@@ -27,7 +27,7 @@ Then open `http://127.0.0.1:8080`. Any static web server works. No `npm install`
 - Tap or swipe to select, hints (tap again for another suggestion), sort, pause, new game, end-of-round results. Keyboard: Enter / H / P / Esc.
 - The current game and difficulty are saved in your browser and resume on refresh. No cross-device sync.
 
-The game uses one fixed casual rule set, described in the in-game rules dialog and in [docs/rules.md](docs/rules.md) (Chinese). It does not try to cover every regional variant.
+The game uses one fixed casual rule set, described in the in-game rules dialog and in [docs/rules.md](docs/rules.md). It does not try to cover every regional variant.
 
 ## Computer players
 
@@ -43,7 +43,7 @@ No difficulty ever reads another player's hidden hand. The AI runs in a Web Work
 sh deploy/package.sh
 ```
 
-This builds `dist/` and `release/guandan-web.zip`. Upload only the contents of `dist/` to your web root, or unzip the archive there. The server needs no Node, Python, database or build step. All paths are relative, so a subdirectory such as `https://example.com/guandan/` works too (keep the trailing `/`). See [docs/deployment.md](docs/deployment.md) (Chinese) for Nginx and Docker examples.
+This builds `dist/` and `release/guandan-web.zip`. Upload only the contents of `dist/` to your web root, or unzip the archive there. The server needs no Node, Python, database or build step. All paths are relative, so a subdirectory such as `https://example.com/guandan/` works too (keep the trailing `/`). See [docs/deployment.md](docs/deployment.md) for Nginx and Docker examples.
 
 ## Development
 

@@ -1,45 +1,47 @@
-# 固定规则与难度
+# Rules and Difficulty
 
-## 队伍和牌
+**English** | [简体中文](rules.zh-CN.md)
 
-四人、两副 54 张牌，每人 27 张。你与对面小北为一队；右家阿岚与左家老周为另一队。顺时针行动，首局随机先手，从打 2 开始。后续使用上一局获胜队的级别。
+## Teams and cards
 
-单牌顺序：大王、小王、本局级牌、A 到 2（跳过级牌）。红心级牌可替代普通点数与花色，不能替代大小王；单独打出按级牌。
+Four players, two 54-card decks, 27 cards each. You and Xiaobei (opposite you) are one team; Alan on your right and Lao Zhou on your left are the other. Play goes clockwise. The first round starts with a random player at level 2; after that, each round is played at the level of the team that won the previous round.
 
-## 牌型
+Single-card order: big joker, small joker, the current level card, then A down to 2 (skipping the level rank). The heart level card is wild: it can stand in for any ordinary rank and suit, but not for a joker. Played on its own, it counts as a level card.
 
-单张、对子、三张、三带二、五张顺子、三个连续对子、两个连续三张（钢板）、四张及以上同点炸弹、五张同花顺、四王天王炸。顺子／连续组合允许 A23… 或 …QKA，不允许跨 A 绕接。级牌在连续组合中保留原始点数位置。
+## Patterns
 
-比较顺序：天王炸 > 六张及以上炸弹 > 同花顺 > 五张炸弹 > 四张炸弹 > 普通牌型。大炸弹张数优先，同张数比点数。普通牌必须同型同比张数，三带二只比较三张部分。
+Single, pair, triple, three-with-pair (三带二), five-card straight, three consecutive pairs, two consecutive triples (steel plate), bombs of four or more cards of one rank, five-card straight flush, and the four-joker bomb. Straights and other runs may be A-2-3… or …Q-K-A but may not wrap around A. Inside runs, the level card keeps its natural rank.
 
-同一组选牌可能有多种红心配牌解释，系统在跟牌时使用能压过上一手的最低档牌型；领出时优先同花顺（含红心配牌组成的同花顺），否则取最低档牌型。同一牌型内，配牌可放头或尾（如 2-6 或 3-7）时默认取较大的一种。选择区显示实际牌型。AI 使用同一规则引擎。
+Order: four-joker bomb > bombs of six or more cards > straight flush > five-card bomb > four-card bomb > ordinary patterns. Between bombs, more cards wins; with equal size, higher rank wins. An ordinary play can only be beaten by the same pattern with the same number of cards. For three-with-pair, only the triple is compared.
 
-## 出牌区展示
+When wild cards allow several readings of the selected cards, following a play uses the lowest category that beats it. Leading prefers a straight flush (including one made with a wild), and otherwise also uses the lowest category. Within one pattern, when a wild could go at either end (for example 2-6 or 3-7), the larger reading is the default. The selection area shows the reading that will be played. The AI uses the same rule engine.
 
-各家面前显示自己最近一次出的牌。该玩家选择“不出”时，立即清空自己面前的牌并显示“不出”，其他玩家的牌不受影响。再次出牌会替换“不出”标记；刷新后保持相同状态。已出完的玩家，其最后一手牌在被别人压过、或这一轮无人能压而结束时，从桌面消失。牌桌上只有当前该出牌的玩家头像会高亮（金色光圈），出牌区本身不再高亮。
+## Play area
 
-## 接风与结算
+Each seat shows its latest play. When a player passes, their area clears immediately and shows “不出” (pass); other seats are unaffected. Playing again replaces the pass marker, and refreshing keeps the same state. A finished player's last cards disappear once someone beats them, or once the trick ends with nobody able to beat them. Only the avatar of the player whose turn it is gets highlighted (a gold ring); the play areas themselves are never highlighted.
 
-出牌者之后的所有仍在场玩家都不出，该出牌者重新领出；如其已出完则由未出完的对家接风，如对家也出完则下一位在场玩家领出。
+## Winning the lead and scoring
 
-头游所在队胜利：队友二游升 3 级，三游升 2 级，末游升 1 级。双下即时结算，两名未出完的败方按座位顺序列在结算页，二者不影响升级、抗贡或按贡牌大小分配。
+When every remaining player after the last play passes, that player leads again. If they have already gone out, their partner (if still playing) takes the lead; if the partner is out too, the next active player leads.
 
-到 A 后，头游且队友不是末游即过 A。打 A 失败保留 A，三次失败回 2。达到 A 必须再打一局 A 才能过关。
+The team of the first player out wins the round. Partner finishing second: up 3 levels; third: up 2; last: up 1. A double win (first and second) ends the round immediately; the two losing players still holding cards are listed by seat on the results screen, and their order does not affect level-ups, tribute refusal or how tribute cards are assigned.
 
-## 进贡
+At level A, a team passes A by finishing first with the partner not last. A failed A round keeps the team at A; after three failures it drops back to 2. A team reaching A must play and win one more round at its own A to win the match.
 
-首局无贡。单下：末游向头游进贡最大的非红心级牌。双下：两败方各进贡一张最大非红心级牌，较大的给头游，另一张给二游。并列按座位编号排序处理。最大贡牌的进贡者先出；同大时采用上述座位顺序第一人。
+## Tribute
 
-单贡方持两张大王，或双贡方合计持两张大王，则抗贡，头游先出。
+No tribute in the first round. Single loss: the last player gives their highest card (other than the heart level card) to the first player. Double loss: both losers each give their highest such card; the higher goes to the first player, the other to the second. Ties are resolved by seat number. Whoever gave the highest tribute card leads; on a tie, the first by that seat order leads.
 
-收贡方还一张 10 或以下非级牌；若没有，则还最小非红心级牌。玩家手动选择高亮的合法牌，电脑自动选择。还贡结束后四人恢复 27 张。
+If the single tribute giver holds both big jokers, or the two double-tribute givers hold both big jokers between them, tribute is refused and the first player leads.
 
-## AI 难度
+Each player who received tribute returns one non-level card of 10 or lower; if they have none, they return their lowest card other than the heart level card. You pick from highlighted legal cards; the computer picks automatically. After returns, everyone is back to 27 cards.
 
-- 简单：合法候选中随机选择，优先普通牌，较少用炸弹，有限让队友。
-- 普通：先把整手牌拆成手数最少的组合（顺子、连对、钢板、三带二、炸弹、同花顺……），每一步按“出完后剩余手牌的质量 + 这一轮的牌权价值”选择。会用最小的控制牌抢牌权、收尾时先出控制牌、对手快走完才动炸弹、队友领先时不接、给快走完的队友递牌。普通难度不记已出的牌，判断控制牌比较保守。
-- 困难：在普通基础上记牌（已出的牌）并从对手“不出”推断其缺少的牌型；残局时把未见的牌按剩余张数随机发给其他三家，逐个候选模拟打完整局，选平均结果最好的出法（约 0.7 秒）。
+## AI difficulty
 
-AI 只拿到自己的手牌、各家剩牌张数、本局公开的出牌和不出记录、级牌和难度，没有任何其他玩家的隐藏手牌。残局模拟只在可能的牌中随机抽样。Worker 超过 2.5 秒或异常退回普通策略。难度即时切换会取消当前计算，并从新的难度重新决策。
+- **Easy**: picks at random among legal moves, prefers ordinary plays, rarely bombs, and sometimes lets its partner keep the lead.
+- **Normal**: first splits the hand into the fewest playable groups (straights, consecutive pairs, steel plates, three-with-pair, bombs, straight flushes…), then picks each move by “quality of the remaining hand + value of winning this trick”. It takes control with its smallest unbeatable card, keeps control cards for answering and only cashes them first in the final run, saves bombs until an opponent is close to going out, stays out of its partner's way, and feeds a partner who is about to go out. Normal does not count played cards, so it judges control cards conservatively.
+- **Hard**: normal, plus counting played cards and inferring from opponents' passes which shapes they lack. In the endgame it deals the unseen cards to the other three players many plausible ways (matching their card counts), plays each candidate move out to the end of the round, and picks the move with the best average result (about 0.7 seconds).
 
-开发者可运行 `node tests/bench.mjs 200 normal old-normal` 进行自我对战评测（同一副牌交换座位各打一次）。
+The AI only receives its own hand, every player's card count, the public plays and passes of the current round, the level and the difficulty. It never sees another player's hidden cards; the endgame search only samples possible hands. If the Web Worker takes longer than 2.5 seconds or fails, the game falls back to the normal strategy. Changing difficulty mid-game cancels the current calculation and decides again at the new level.
+
+Developers can run `node tests/bench.mjs 200 normal old-normal` for a self-play benchmark (each deal is played twice with seats swapped).

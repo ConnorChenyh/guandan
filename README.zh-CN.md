@@ -27,7 +27,7 @@ python3 -m http.server 8080 --bind 127.0.0.1
 - 点击或滑动选牌、提示（重复点击换建议）、理牌、暂停、重新开局、局末结算。支持键盘 Enter / H / P / Esc。
 - 当前牌局和难度自动保存于当前浏览器，刷新继续。无跨设备同步。
 
-本作采用一套固定休闲规则，细节见游戏内“玩法说明”和 [规则说明](docs/rules.md)，不宣称覆盖所有地区变体。
+本作采用一套固定休闲规则，细节见游戏内“玩法说明”和 [规则说明](docs/rules.zh-CN.md)，不宣称覆盖所有地区变体。
 
 ## 电脑难度
 
@@ -43,7 +43,7 @@ python3 -m http.server 8080 --bind 127.0.0.1
 sh deploy/package.sh
 ```
 
-生成 `dist/` 和 `release/guandan-web.zip`。**只需上传 dist 内的文件**到网站根目录，或解压 ZIP 到该目录。服务器不需要 Node、Python、数据库或构建过程。所有资源使用相对路径，也可部署到 `https://example.com/guandan/`（保留尾部 `/`）。Nginx 与 Docker 示例见 [部署说明](docs/deployment.md)。
+生成 `dist/` 和 `release/guandan-web.zip`。**只需上传 dist 内的文件**到网站根目录，或解压 ZIP 到该目录。服务器不需要 Node、Python、数据库或构建过程。所有资源使用相对路径，也可部署到 `https://example.com/guandan/`（保留尾部 `/`）。Nginx 与 Docker 示例见 [部署说明](docs/deployment.zh-CN.md)。
 
 ## 开发与验证
 
