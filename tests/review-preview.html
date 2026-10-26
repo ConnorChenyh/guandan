@@ -1,0 +1,12 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Mobile review fixture</title><link rel="icon" href="data:,"><style>body{margin:0;background:#ddd;display:flex;justify-content:center}iframe{border:0;background:white}</style><script type="module">
+import {newGame} from '../js/game.js';
+import {deck,resolvePlay,sortHand} from '../js/rules.js';
+const args=new URLSearchParams(location.search),s=newGame();let available=deck();
+function take(rank,count){const chosen=available.filter(c=>c.rank===rank).slice(0,count);const ids=new Set(chosen.map(c=>c.id));available=available.filter(c=>!ids.has(c.id));return chosen;}
+const ws=available.filter(c=>c.rank===2&&c.suit===1);available=available.filter(c=>!ws.some(w=>w.id===c.id));
+const bomb=resolvePlay([...take(3,8),...ws],2),east=resolvePlay([...take(4,3),...take(5,3)],2),north=resolvePlay([...take(6,3),...take(7,3)],2);
+s.lastPlays=[null,east,north,bomb];s.table=[null,{pass:true},{play:north},{play:bomb}];s.last={player:3,play:bomb};s.seen=[...east.cards,...north.cards,...bomb.cards];s.turn=0;s.pending=[0,1,2];
+let cursor=0;s.hands=[27,21,21,17].map(n=>{const cards=available.slice(cursor,cursor+n);cursor+=n;return sortHand(cards,2);});
+localStorage.setItem('qingzhuo-guandan-v1',JSON.stringify(s));
+const frame=document.createElement('iframe');frame.title='Review phone viewport';frame.width=args.get('w')||390;frame.height=args.get('h')||844;frame.src='../index.html';document.body.append(frame);
+</script></html>

@@ -1,0 +1,12 @@
+# Build output (regenerate with: sh deploy/package.sh)
+dist/
+release/
+
+# Local-only notes, deployment records and screenshots
+private/
+
+# Local tooling
+.claude/
+node_modules/
+.DS_Store
+*.log

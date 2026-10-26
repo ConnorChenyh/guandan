@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><title>四家出牌区验收</title><link rel="icon" href="data:,"><style>body{margin:0;background:#ddd;display:flex;justify-content:center}iframe{width:390px;height:900px;border:0}</style><script type="module">
+import {newGame,act} from '../js/game.js';
+import {deck} from '../js/rules.js';
+const s=newGame();s.turn=0;const d=deck();
+s.hands=[0,1,2,3].map(i=>{const ranks=[3+i*2,4+i*2];return [...ranks.flatMap(r=>d.filter(c=>c.rank===r).slice(0,3)),...d.filter(c=>c.rank===12+i).slice(0,2)];});
+for(let i=0;i<4;i++)act(s,i,s.hands[i].slice(0,6).map(c=>c.id));
+localStorage.setItem('qingzhuo-guandan-v1',JSON.stringify(s));const frame=document.createElement('iframe');frame.src='../index.html';document.body.append(frame);
+</script>
